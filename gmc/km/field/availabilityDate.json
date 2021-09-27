@@ -1,13 +1,11 @@
 {
-  "$id": "gmc_height",
+  "$id": "gmc_availabilityDate",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Height",
+  "displayName": "Availability Date",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
-    "stringType": {
-      "stereotype": "SIMPLE"
-    }
+    "dateType": {}
   },
-  "typeId": "yext/string"
+  "typeId": "date"
 }

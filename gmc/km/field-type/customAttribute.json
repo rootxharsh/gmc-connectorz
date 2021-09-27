@@ -1,0 +1,33 @@
+{
+  "$id": "gmc_customAttribute",
+  "$schema": "https://schema.yext.com/config/km/field-type/v1",
+  "displayName": "Custom Attribute",
+  "type": {
+    "structType": {
+      "property": [
+        {
+          "name": "name",
+          "displayName": "Name",
+          "isRequired": false,
+          "typeId": "string",
+          "type": {
+            "stringType": {
+              "stereotype": "SIMPLE"
+            }
+          }
+        },
+        {
+          "name": "value",
+          "displayName": "Value",
+          "isRequired": false,
+          "typeId": "string",
+          "type": {
+            "stringType": {
+              "stereotype": "SIMPLE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

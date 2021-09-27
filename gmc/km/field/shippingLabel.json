@@ -1,7 +1,7 @@
 {
-  "$id": "gmc_salePrice",
+  "$id": "gmc_shippingLabel",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Sale Price",
+  "displayName": "Shipping Label",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
@@ -9,5 +9,5 @@
       "stereotype": "SIMPLE"
     }
   },
-  "typeId": "yext/string"
+  "typeId": "string"
 }

@@ -5,9 +5,22 @@
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
-    "stringType": {
-      "stereotype": "SIMPLE"
+    "optionType": {
+      "option": [
+        {
+          "displayName": "New",
+          "textValue": "NEW"
+        },
+        {
+          "displayName": "Refurbished",
+          "textValue": "REFURBISHED"
+        },
+        {
+          "displayName": "Used",
+          "textValue": "USED"
+        }
+      ]
     }
   },
-  "typeId": "yext/string"
+  "typeId": "option"
 }

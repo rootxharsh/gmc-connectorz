@@ -1,7 +1,7 @@
 {
-  "$id": "gmc_pattern",
+  "$id": "gmc_itemGroupID",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Pattern",
+  "displayName": "Item Group ID",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
@@ -9,5 +9,5 @@
       "stereotype": "SIMPLE"
     }
   },
-  "typeId": "yext/string"
+  "typeId": "string"
 }

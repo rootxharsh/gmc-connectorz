@@ -5,9 +5,22 @@
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
-    "stringType": {
-      "stereotype": "SIMPLE"
+    "optionType": {
+      "option": [
+        {
+          "displayName": "Male",
+          "textValue": "MALE"
+        },
+        {
+          "displayName": "Female",
+          "textValue": "FEMALE"
+        },
+        {
+          "displayName": "Unisex",
+          "textValue": "UNISEX"
+        }
+      ]
     }
   },
-  "typeId": "yext/string"
+  "typeId": "option"
 }

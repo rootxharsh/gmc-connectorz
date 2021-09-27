@@ -1,0 +1,8 @@
+{
+  "$id": "gmc_sizeType",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Size Type",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "typeId": "gmc_sizeType"
+}

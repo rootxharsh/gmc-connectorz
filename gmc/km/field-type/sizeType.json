@@ -1,0 +1,47 @@
+{
+  "$id": "gmc_sizeType",
+  "$schema": "https://schema.yext.com/config/km/field-type/v1",
+  "displayName": "Size Type",
+  "type": {
+    "structType": {
+      "property": [
+        {
+          "name": "sizeType",
+          "displayName": "Size Type",
+          "isRequired": false,
+          "typeId": "option",
+          "type": {
+            "optionType": {
+              "option": [
+                {
+                  "displayName": "Regular",
+                  "textValue": "Regular"
+                },
+                {
+                  "displayName": "Petite",
+                  "textValue": "Petite"
+                },
+                {
+                  "displayName": "Maternity",
+                  "textValue": "Maternity"
+                },
+                {
+                  "displayName": "Big",
+                  "textValue": "Big"
+                },
+                {
+                  "displayName": "Tall",
+                  "textValue": "Tall"
+                },
+                {
+                  "displayName": "Plus",
+                  "textValue": "Plus"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

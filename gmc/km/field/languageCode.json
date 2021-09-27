@@ -1,7 +1,7 @@
 {
-  "$id": "gmc_adultContent",
+  "$id": "gmc_languageCode",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Adult Content",
+  "displayName": "Language Code",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
@@ -9,5 +9,5 @@
       "stereotype": "SIMPLE"
     }
   },
-  "typeId": "yext/string"
+  "typeId": "string"
 }

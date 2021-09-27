@@ -1,11 +1,11 @@
 {
-  "$id": "gmc_expirationDate",
+  "$id": "gmc_sellOnGoogleQuantity",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Expiration Date",
+  "displayName": "Sell on Google Quantity",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
-    "dateType": {}
+    "decimalType": {}
   },
-  "typeId": "yext/date"
+  "typeId": "decimal"
 }

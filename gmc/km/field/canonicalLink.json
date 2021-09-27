@@ -1,13 +1,13 @@
 {
-  "$id": "gmc_shippingInfo",
+  "$id": "gmc_canonicalLink",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Shipping Info",
+  "displayName": "Canonical Link",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
     "stringType": {
-      "stereotype": "MULTILINE"
+      "stereotype": "URL"
     }
   },
-  "typeId": "yext/string"
+  "typeId": "string"
 }

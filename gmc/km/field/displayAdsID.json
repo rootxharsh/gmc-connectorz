@@ -1,7 +1,7 @@
 {
-  "$id": "gmc_width",
+  "$id": "gmc_displayAdsID",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Width",
+  "displayName": "Display Ads ID",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
@@ -9,5 +9,5 @@
       "stereotype": "SIMPLE"
     }
   },
-  "typeId": "yext/string"
+  "typeId": "string"
 }

@@ -58,42 +58,6 @@
         },
         {
           "id": "price"
-        },
-        {
-          "id": "gmc_expirationDate"
-        },
-        {
-          "id": "gmc_adultContent"
-        },
-        {
-          "id": "gmc_material"
-        },
-        {
-          "id": "gmc_pattern"
-        },
-        {
-          "id": "gmc_salePrice"
-        },
-        {
-          "id": "gmc_shippingInfo"
-        },
-        {
-          "id": "gmc_sizes"
-        },
-        {
-          "id": "gmc_length"
-        },
-        {
-          "id": "gmc_width"
-        },
-        {
-          "id": "gmc_height"
-        },
-        {
-          "id": "gmc_condition"
-        },
-        {
-          "id": "gmc_gender"
         }
       ]
     },
@@ -101,12 +65,6 @@
       "displayName": "Media",
       "entryType": "SECTION",
       "fields": [
-        {
-          "id": "gmc_primaryPhoto"
-        },
-        {
-          "id": "gmc_additionalPhotos"
-        },
         {
           "id": "photoGallery"
         },

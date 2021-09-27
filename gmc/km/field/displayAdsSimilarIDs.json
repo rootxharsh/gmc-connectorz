@@ -1,12 +1,12 @@
 {
-  "$id": "gmc_sizes",
+  "$id": "gmc_displayAdsSimilarIDs",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Sizes",
+  "displayName": "Display Ads Similar IDs",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
     "listType": {
-      "typeId": "yext/string",
+      "typeId": "string",
       "type": {
         "stringType": {
           "stereotype": "SIMPLE"
@@ -14,5 +14,5 @@
       }
     }
   },
-  "typeId": "yext/list"
+  "typeId": "list"
 }

@@ -1,0 +1,31 @@
+{
+  "$id": "gmc_source",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Source",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "option",
+      "type": {
+        "optionType": {
+          "option": [
+            {
+              "displayName": "api",
+              "textValue": "API"
+            },
+            {
+              "displayName": "crawl",
+              "textValue": "CRAWL"
+            },
+            {
+              "displayName": "feed",
+              "textValue": "FEED"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}

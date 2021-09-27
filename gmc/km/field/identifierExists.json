@@ -1,13 +1,11 @@
 {
-  "$id": "gmc_length",
+  "$id": "gmc_identifierExists",
   "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Length",
+  "displayName": "Identifier Exists",
   "group": "NONE",
   "localization": "PRIMARY_ONLY",
   "type": {
-    "stringType": {
-      "stereotype": "SIMPLE"
-    }
+    "booleanType": {}
   },
-  "typeId": "yext/string"
+  "typeId": "boolean"
 }
