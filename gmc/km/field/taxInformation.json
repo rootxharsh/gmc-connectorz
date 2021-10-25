@@ -1,8 +1,0 @@
-{
-  "$id": "gmc_taxInformation",
-  "$schema": "https://schema.yext.com/config/km/field/v1",
-  "displayName": "Tax Information",
-  "group": "NONE",
-  "localization": "PRIMARY_ONLY",
-  "typeId": "c_taxInformation"
-}
