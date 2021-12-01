@@ -1,5 +1,5 @@
 {
-  "$id": "gmc_productconnector",
+  "$id": "gmcconnector_productconnector",
   "$schema": "https://schema.yext.com/config/km/connector/v2",
   "displayName": "Google Merchant Center Product Connector",
   "entityType": "product",
@@ -72,7 +72,7 @@
             "Availability"
           ]
         },
-        "plugin": "gmc_convertStockStatus",
+        "plugin": "gmcconnector_convertStockStatus",
         "function": "convertStockStatus"
       }
     }
