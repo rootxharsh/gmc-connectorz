@@ -72,8 +72,19 @@
             "Availability"
           ]
         },
-        "plugin": "gmcconnector_convertStockStatus",
+        "plugin": "gmc_convertStockStatus",
         "function": "convertStockStatus"
+      }
+    },
+    {
+      "formatDates": {
+        "inputHeaders": {
+          "headers": [
+            "Availability Date",
+            "Expiration Date"
+          ]
+        },
+        "inputFormat": "yyyy-MM-dd\u0027T\u0027kk:mm:ssX"
       }
     }
   ],
