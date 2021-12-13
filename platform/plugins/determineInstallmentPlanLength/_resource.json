@@ -1,4 +1,4 @@
 {
-  "$id": "gmcconnector_convertStockStatus",
+  "$id": "gmcconnector_determineInstallmentPlanLength",
   "$schema": "https://schema.yext.com/config/platform/plugin/v1"
 }

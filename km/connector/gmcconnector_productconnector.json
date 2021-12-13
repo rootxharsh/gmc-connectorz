@@ -254,7 +254,7 @@
       {
         "type": "JSON",
         "header": "Ads Redirect URL",
-        "path": "adsRedirectUrl"
+        "path": "adsRedirect"
       },
       {
         "type": "JSON",
@@ -319,62 +319,62 @@
       {
         "type": "JSON",
         "header": "Shipping Country",
-        "path": "shipping.country"
+        "path": "shipping[*].country"
       },
       {
         "type": "JSON",
         "header": "Shipping Location Group Name",
-        "path": "shipping.locationGroupName"
+        "path": "shipping[*].locationGroupName"
       },
       {
         "type": "JSON",
-        "header": "Shipping Location",
-        "path": "shipping.locationId"
+        "header": "Shipping Location ID",
+        "path": "shipping[*].locationId"
       },
       {
         "type": "JSON",
         "header": "Shipping Max Handling Time",
-        "path": "shipping.maxHandlingTime"
+        "path": "shipping[*].maxHandlingTime"
       },
       {
         "type": "JSON",
         "header": "Shipping Min Handling Time",
-        "path": "shipping.minHandlingTime"
+        "path": "shipping[*].minHandlingTime"
       },
       {
         "type": "JSON",
         "header": "Shipping Max Transit Time",
-        "path": "shipping.maxTransitTime"
+        "path": "shipping[*].maxTransitTime"
       },
       {
         "type": "JSON",
         "header": "Shipping Min Transit Time",
-        "path": "shipping.minTransitTime"
+        "path": "shipping[*].minTransitTime"
       },
       {
         "type": "JSON",
         "header": "Shipping Postal Code",
-        "path": "shipping.postalCode"
+        "path": "shipping[*].postalCode"
       },
       {
         "type": "JSON",
         "header": "Shipping Price Currency",
-        "path": "shipping.price.currency"
+        "path": "shipping[*].price.currency"
       },
       {
         "type": "JSON",
         "header": "Shipping Price Value",
-        "path": "shipping.price.value"
+        "path": "shipping[*].price.value"
       },
       {
         "type": "JSON",
         "header": "Shipping Region",
-        "path": "shipping.region"
+        "path": "shipping[*].region"
       },
       {
         "type": "JSON",
         "header": "Shipping Service",
-        "path": "shipping.service"
+        "path": "shipping[*].service"
       },
       {
         "type": "JSON",
@@ -408,48 +408,108 @@
       },
       {
         "type": "JSON",
-        "header": "Target Countries",
+        "header": "Target Country",
         "path": "targetCountry"
       },
       {
         "type": "JSON",
         "header": "Tax Category Label",
-        "path": "taxCategoryLabel"
+        "path": "taxCategory"
       },
       {
         "type": "JSON",
         "header": "Tax Country",
-        "path": "taxes.country"
+        "path": "taxes[*].country"
       },
       {
         "type": "JSON",
         "header": "Tax Google Location ID",
-        "path": "taxes.locationId"
+        "path": "taxes[*].locationId"
       },
       {
         "type": "JSON",
-        "header": "Tax Postcode",
-        "path": "tax.postalCode"
+        "header": "Tax Postal Code",
+        "path": "taxes[*].postalCode"
       },
       {
         "type": "JSON",
         "header": "Tax Rate",
-        "path": "taxes.rate"
+        "path": "taxes[*].rate"
       },
       {
         "type": "JSON",
         "header": "Tax Region",
-        "path": "taxes.region"
+        "path": "taxes[*].region"
       },
       {
         "type": "JSON",
         "header": "Tax Charged on Shipping",
-        "path": "taxes.taxShip"
+        "path": "taxes[*].taxShip"
       },
       {
         "type": "JSON",
         "header": "Transit Time Label",
         "path": "transitTimeLabel"
+      },
+      {
+        "type": "JSON",
+        "header": "Product Subscription Cost (Period Length)",
+        "path": "subscriptionCost.periodLength"
+      },
+      {
+        "type": "JSON",
+        "header": "Product Subscription Cost (Value)",
+        "path": "subscriptionCost.amount.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Product Subscription Cost (Currency)",
+        "path": "subscriptionCost.amount.currency"
+      },
+      {
+        "type": "JSON",
+        "header": "Channel",
+        "path": "channel"
+      },
+      {
+        "type": "JSON",
+        "header": "Age Group",
+        "path": "ageGroup"
+      },
+      {
+        "type": "JSON",
+        "header": "Gender ",
+        "path": "gender"
+      },
+      {
+        "type": "JSON",
+        "header": "Material",
+        "path": "material"
+      },
+      {
+        "type": "JSON",
+        "header": "Pattern",
+        "path": "pattern"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Number of Periods)",
+        "path": "installment.months"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Period Length)",
+        "path": "installment.months"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Value)",
+        "path": "installment.amount.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Currency)",
+        "path": "installment.amount.currency"
       }
     ]
   },
@@ -466,6 +526,17 @@
       }
     },
     {
+      "formatDates": {
+        "inputHeaders": {
+          "headers": [
+            "Availability Date",
+            "Expiration Date"
+          ]
+        },
+        "inputFormat": "yyyy-MM-dd\u0027T\u0027kk:mm:ssX"
+      }
+    },
+    {
       "mergeColumns": {
         "inputHeaders": [
           "Shopping Ads Labels 0",
@@ -474,8 +545,37 @@
           "Shopping Ads Labels 3",
           "Shopping Ads Labels 4"
         ],
-        "newColumnHeader": "Shopping Ads Labels",
+        "newColumnHeader": "Custom Labels",
         "delimiter": ","
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "Installment Plan (Period Length)"
+          ]
+        },
+        "plugin": "gmcconnector_determineInstallmentPlanLength",
+        "function": "determineInstallmentPlanLength"
+      }
+    },
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "Energy Efficiency Class",
+            "Minimum Energy Efficiency Class",
+            "Maximum Energy Efficiency Class"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": "+",
+            "ignoreCase": false
+          }
+        },
+        "replacement": "_PLUS"
       }
     }
   ],
@@ -490,12 +590,26 @@
       ]
     },
     {
+      "field": "gmc_overrideTax",
+      "header": "Tax Country",
+      "subfieldPath": [
+        {
+          "name": "taxCountry"
+        }
+      ]
+    },
+    {
+      "field": "gmc_shoppingAdsLabels",
+      "header": "Custom Labels",
+      "subfieldPath": []
+    },
+    {
       "field": "mpn",
       "header": "MPN",
       "subfieldPath": []
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Min Transit Time",
       "subfieldPath": [
         {
@@ -523,6 +637,15 @@
       "subfieldPath": []
     },
     {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Number of Periods)",
+      "subfieldPath": [
+        {
+          "name": "numberOfPeriods"
+        }
+      ]
+    },
+    {
       "field": "includesAdultContent",
       "header": "Adult Content",
       "subfieldPath": []
@@ -542,7 +665,7 @@
       "subfieldPath": []
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Max Transit Time",
       "subfieldPath": [
         {
@@ -582,6 +705,18 @@
       "subfieldPath": []
     },
     {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Currency)",
+      "subfieldPath": [
+        {
+          "name": "price"
+        },
+        {
+          "name": "currencyCode"
+        }
+      ]
+    },
+    {
       "field": "shippingWidth",
       "header": "Shipping Width (Value)",
       "subfieldPath": [
@@ -591,7 +726,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Max Handling Time",
       "subfieldPath": [
         {
@@ -624,6 +759,15 @@
       "subfieldPath": []
     },
     {
+      "field": "gmc_overrideTax",
+      "header": "Tax Postal Code",
+      "subfieldPath": [
+        {
+          "name": "taxPostalCode"
+        }
+      ]
+    },
+    {
       "field": "shippingHeight",
       "header": "Shipping Height (Unit)",
       "subfieldPath": [
@@ -640,6 +784,11 @@
           "name": "displayAdsLink"
         }
       ]
+    },
+    {
+      "field": "salesChannel",
+      "header": "Channel",
+      "subfieldPath": []
     },
     {
       "field": "shippingLength",
@@ -665,8 +814,18 @@
       ]
     },
     {
+      "field": "gmc_pickupMethodOption",
+      "header": "Pickup Method",
+      "subfieldPath": []
+    },
+    {
       "field": "sizeSystem",
       "header": "Size System",
+      "subfieldPath": []
+    },
+    {
+      "field": "targetGender",
+      "header": "Gender ",
       "subfieldPath": []
     },
     {
@@ -684,7 +843,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Postal Code",
       "subfieldPath": [
         {
@@ -693,7 +852,12 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_transitTimeLabel",
+      "header": "Transit Time Label",
+      "subfieldPath": []
+    },
+    {
+      "field": "gmc_shippingOverride",
       "header": "Shipping Service",
       "subfieldPath": [
         {
@@ -716,7 +880,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Min Handling Time",
       "subfieldPath": [
         {
@@ -744,6 +908,15 @@
       "subfieldPath": []
     },
     {
+      "field": "gmc_overrideTax",
+      "header": "Tax Rate",
+      "subfieldPath": [
+        {
+          "name": "taxRate"
+        }
+      ]
+    },
+    {
       "field": "productHighlights",
       "header": "Product Highlights",
       "subfieldPath": []
@@ -751,6 +924,11 @@
     {
       "field": "numberOfItemsInPack",
       "header": "Multipack",
+      "subfieldPath": []
+    },
+    {
+      "field": "gmc_taxCategoryLabel",
+      "header": "Tax Category Label",
       "subfieldPath": []
     },
     {
@@ -778,9 +956,39 @@
       "subfieldPath": []
     },
     {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Value)",
+      "subfieldPath": [
+        {
+          "name": "price"
+        },
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
       "field": "expirationDate",
       "header": "Expiration Date",
       "subfieldPath": []
+    },
+    {
+      "field": "gmc_shippingOverride",
+      "header": "Shipping Location ID",
+      "subfieldPath": [
+        {
+          "name": "locationID"
+        }
+      ]
+    },
+    {
+      "field": "gmc_overrideTax",
+      "header": "Tax Region",
+      "subfieldPath": [
+        {
+          "name": "taxRegion"
+        }
+      ]
     },
     {
       "field": "richTextDescription",
@@ -788,7 +996,7 @@
       "subfieldPath": []
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Price Value",
       "subfieldPath": [
         {
@@ -800,7 +1008,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Location Group Name",
       "subfieldPath": [
         {
@@ -818,7 +1026,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Price Currency",
       "subfieldPath": [
         {
@@ -826,6 +1034,18 @@
         },
         {
           "name": "currency"
+        }
+      ]
+    },
+    {
+      "field": "subscriptionPlan",
+      "header": "Product Subscription Cost (Value)",
+      "subfieldPath": [
+        {
+          "name": "price"
+        },
+        {
+          "name": "value"
         }
       ]
     },
@@ -848,6 +1068,29 @@
       ]
     },
     {
+      "field": "gmc_overrideTax",
+      "header": "Tax Charged on Shipping",
+      "subfieldPath": [
+        {
+          "name": "taxShipping"
+        }
+      ]
+    },
+    {
+      "field": "targetAgeGroup",
+      "header": "Age Group",
+      "subfieldPath": []
+    },
+    {
+      "field": "gmc_overrideTax",
+      "header": "Tax Google Location ID",
+      "subfieldPath": [
+        {
+          "name": "taxLocationID"
+        }
+      ]
+    },
+    {
       "field": "shippingWeight",
       "header": "Shipping Weight (Unit)",
       "subfieldPath": [
@@ -862,8 +1105,22 @@
       "subfieldPath": []
     },
     {
+      "field": "subscriptionPlan",
+      "header": "Product Subscription Cost (Period Length)",
+      "subfieldPath": [
+        {
+          "name": "numberOfPeriods"
+        }
+      ]
+    },
+    {
       "field": "condition",
       "header": "Condition",
+      "subfieldPath": []
+    },
+    {
+      "field": "pattern",
+      "header": "Pattern",
       "subfieldPath": []
     },
     {
@@ -900,6 +1157,11 @@
       ]
     },
     {
+      "field": "material",
+      "header": "Material",
+      "subfieldPath": []
+    },
+    {
       "field": "gmc_displayAds",
       "header": "Display Ads Value",
       "subfieldPath": [
@@ -930,7 +1192,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Country",
       "subfieldPath": [
         {
@@ -948,7 +1210,7 @@
       ]
     },
     {
-      "field": "gmc_overrideShipping",
+      "field": "gmc_shippingOverride",
       "header": "Shipping Region",
       "subfieldPath": [
         {
@@ -966,16 +1228,28 @@
       ]
     },
     {
+      "field": "subscriptionPlan",
+      "header": "Product Subscription Cost (Currency)",
+      "subfieldPath": [
+        {
+          "name": "price"
+        },
+        {
+          "name": "currencyCode"
+        }
+      ]
+    },
+    {
       "field": "gtin",
       "header": "GTIN",
       "subfieldPath": []
     },
     {
-      "field": "gmc_overrideShipping",
-      "header": "Shipping Location",
+      "field": "installmentPlan",
+      "header": "Installment Plan (Period Length)",
       "subfieldPath": [
         {
-          "name": "locationID"
+          "name": "period"
         }
       ]
     },
@@ -1004,6 +1278,11 @@
       ]
     },
     {
+      "field": "gmc_targetCountry",
+      "header": "Target Country",
+      "subfieldPath": []
+    },
+    {
       "field": "price",
       "header": "Price (Currency)",
       "subfieldPath": [
@@ -1011,85 +1290,6 @@
           "name": "currencyCode"
         }
       ]
-    },
-    {
-      "field": "gmc_shoppingAdsLabels",
-      "header": "Shopping Ads Labels",
-      "subfieldPath": []
-    },
-    {
-      "field": "gmc_pickupMethod",
-      "header": "Pickup Method",
-      "subfieldPath": []
-    },
-    {
-      "field": "gmc_targetCountry",
-      "header": "Target Countries",
-      "subfieldPath": []
-    },
-    {
-      "field": "gmc_taxCategoryLabel",
-      "header": "Tax Category Label",
-      "subfieldPath": []
-    },
-    {
-      "field": "gmc_taxOverride",
-      "header": "Tax Country",
-      "subfieldPath": [
-        {
-          "name": "taxCountry"
-        }
-      ]
-    },
-    {
-      "field": "gmc_taxOverride",
-      "header": "Tax Google Location ID",
-      "subfieldPath": [
-        {
-          "name": "taxLocationID"
-        }
-      ]
-    },
-    {
-      "field": "gmc_taxOverride",
-      "header": "Tax Postcode",
-      "subfieldPath": [
-        {
-          "name": "taxPostalCode"
-        }
-      ]
-    },
-    {
-      "field": "gmc_taxOverride",
-      "header": "Tax Rate",
-      "subfieldPath": [
-        {
-          "name": "taxRate"
-        }
-      ]
-    },
-    {
-      "field": "gmc_taxOverride",
-      "header": "Tax Region",
-      "subfieldPath": [
-        {
-          "name": "taxRegion"
-        }
-      ]
-    },
-    {
-      "field": "gmc_taxOverride",
-      "header": "Tax Charged on Shipping",
-      "subfieldPath": [
-        {
-          "name": "taxShipping"
-        }
-      ]
-    },
-    {
-      "field": "gmc_transitTimeLabel",
-      "header": "Transit Time Label",
-      "subfieldPath": []
     }
   ]
 }
