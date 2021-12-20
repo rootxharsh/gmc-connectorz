@@ -1,6 +1,6 @@
 {
   "$id": "gmcconnector_productconnector",
-  "$schema": "https://schema.yext.com/config/km/connector/v2",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
   "displayName": "Google Merchant Center Product Connector",
   "entityType": "product",
   "source": {
@@ -997,18 +997,6 @@
     },
     {
       "field": "gmc_shippingOverride",
-      "header": "Shipping Price Value",
-      "subfieldPath": [
-        {
-          "name": "price"
-        },
-        {
-          "name": "value"
-        }
-      ]
-    },
-    {
-      "field": "gmc_shippingOverride",
       "header": "Shipping Location Group Name",
       "subfieldPath": [
         {
@@ -1022,18 +1010,6 @@
       "subfieldPath": [
         {
           "name": "value"
-        }
-      ]
-    },
-    {
-      "field": "gmc_shippingOverride",
-      "header": "Shipping Price Currency",
-      "subfieldPath": [
-        {
-          "name": "price"
-        },
-        {
-          "name": "currency"
         }
       ]
     },
@@ -1288,6 +1264,30 @@
       "subfieldPath": [
         {
           "name": "currencyCode"
+        }
+      ]
+    },
+    {
+      "field": "gmc_shippingOverride",
+      "header": "Shipping Price Currency",
+      "subfieldPath": [
+        {
+          "name": "price2"
+        },
+        {
+          "name": "currency"
+        }
+      ]
+    },
+    {
+      "field": "gmc_shippingOverride",
+      "header": "Shipping Price Value",
+      "subfieldPath": [
+        {
+          "name": "price2"
+        },
+        {
+          "name": "value"
         }
       ]
     }
