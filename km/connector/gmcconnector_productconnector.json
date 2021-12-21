@@ -510,6 +510,16 @@
         "type": "JSON",
         "header": "Installment Plan (Currency)",
         "path": "installment.amount.currency"
+      },
+      {
+        "type": "JSON",
+        "header": "Sale Price (value)",
+        "path": "salePrice.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Sale Price (currency)",
+        "path": "salePrice.currency"
       }
     ]
   },
@@ -1288,6 +1298,30 @@
         },
         {
           "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "sales",
+      "header": "Sale Price (value)",
+      "subfieldPath": [
+        {
+          "name": "salePrice"
+        },
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "sales",
+      "header": "Sale Price (currency)",
+      "subfieldPath": [
+        {
+          "name": "salePrice"
+        },
+        {
+          "name": "currencyCode"
         }
       ]
     }
