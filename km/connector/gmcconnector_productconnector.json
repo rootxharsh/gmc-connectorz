@@ -525,6 +525,21 @@
         "type": "JSON",
         "header": "Sizes",
         "path": "sizes"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Value)",
+        "path": "installment.amount.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Currency)",
+        "path": "installment.amount.currency"
+      },
+      {
+        "type": "JSON",
+        "header": "Sale Price Date (raw)",
+        "path": "salePriceEffectiveDate"
       }
     ]
   },
@@ -591,6 +606,35 @@
           }
         },
         "replacement": "_PLUS"
+      }
+    },
+    {
+      "extractText": {
+        "inputHeader": "Sale Price Date (raw)",
+        "newColumnHeader": "Sale Price Start Date (raw)",
+        "extractOperation": "ALL_TEXT_BEFORE",
+        "extractFrom": "FIRST_INSTANCE_MATCHING_TEXT",
+        "valueToFind": {
+          "plainText": {
+            "value": "T",
+            "ignoreCase": false
+          }
+        }
+      }
+    },
+    {
+      "extractText": {
+        "inputHeader": "Sale Price Date (raw)",
+        "newColumnHeader": "Sale Price End Date (raw)",
+        "extractOperation": "SOME_TEXT_AFTER",
+        "extractFrom": "FIRST_INSTANCE_MATCHING_TEXT",
+        "valueToFind": {
+          "plainText": {
+            "value": "/",
+            "ignoreCase": false
+          }
+        },
+        "maxLengthTextToKeep": 10
       }
     }
   ],
@@ -1334,6 +1378,24 @@
       "field": "size",
       "header": "Sizes",
       "subfieldPath": []
+    },
+    {
+      "field": "sales",
+      "header": "Sale Price Start Date (raw)",
+      "subfieldPath": [
+        {
+          "name": "saleStartDate"
+        }
+      ]
+    },
+    {
+      "field": "sales",
+      "header": "Sale Price End Date (raw)",
+      "subfieldPath": [
+        {
+          "name": "saleEndDate"
+        }
+      ]
     }
   ]
 }
