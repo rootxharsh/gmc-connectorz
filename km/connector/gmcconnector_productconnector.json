@@ -520,6 +520,11 @@
         "type": "JSON",
         "header": "Sale Price (currency)",
         "path": "salePrice.currency"
+      },
+      {
+        "type": "JSON",
+        "header": "Sizes",
+        "path": "sizes"
       }
     ]
   },
@@ -1324,6 +1329,11 @@
           "name": "currencyCode"
         }
       ]
+    },
+    {
+      "field": "size",
+      "header": "Sizes",
+      "subfieldPath": []
     }
   ]
 }
