@@ -626,6 +626,32 @@
         },
         "maxLengthTextToKeep": 10
       }
+    },
+    {
+      "fixCapitalization": {
+        "inputHeaders": {
+          "headers": [
+            "Pickup Method"
+          ]
+        },
+        "cleanOption": "ALL_CAPS"
+      }
+    },
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "Pickup Method"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": " ",
+            "ignoreCase": false
+          }
+        },
+        "replacement": "_"
+      }
     }
   ],
   "mappings": [
