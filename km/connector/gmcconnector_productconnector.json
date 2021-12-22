@@ -973,7 +973,7 @@
       ]
     },
     {
-      "field": "parentProduct",
+      "field": "gmc_itemGroupID",
       "header": "Item Group ID",
       "subfieldPath": []
     },
