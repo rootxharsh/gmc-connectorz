@@ -528,16 +528,6 @@
       },
       {
         "type": "JSON",
-        "header": "Installment Plan (Value)",
-        "path": "installment.amount.value"
-      },
-      {
-        "type": "JSON",
-        "header": "Installment Plan (Currency)",
-        "path": "installment.amount.currency"
-      },
-      {
-        "type": "JSON",
         "header": "Sale Price Date (raw)",
         "path": "salePriceEffectiveDate"
       }
