@@ -861,7 +861,7 @@
       ]
     },
     {
-      "field": "salesChannel",
+      "field": "gmc_channel",
       "header": "Channel",
       "subfieldPath": []
     },
